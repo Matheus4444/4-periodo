@@ -18,7 +18,7 @@ public class Teste {
 	public static void listaAdjacencias(){
 		Scanner leitor = new Scanner(System.in);
 		try {
-			leitor = new Scanner(new File("C:\\coding\\college\\java\\4 periodo\\ED-Exercicio2\\Grafo.txt"));
+			leitor = new Scanner(new File("D:\\Coding\\Java\\4-periodo\\ED-Exercicio2\\Grafo.txt"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -55,7 +55,7 @@ public class Teste {
 	public static int[][] matrizAdjacencia() {
 		Scanner leitor = new Scanner(System.in);
 		try {
-			leitor = new Scanner( new File("C:\\coding\\college\\java\\4 periodo\\ED-Exercicio2\\Grafo.txt"));
+			leitor = new Scanner( new File("D:\\Coding\\Java\\4-periodo\\ED-Exercicio2\\Grafo.txt"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -78,20 +78,18 @@ public class Teste {
 			}
 			System.out.println("");
 		}
-
 		try {
 			leitor.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
 		return A;
 	}
 
 	public static int[][] matrizIncidencia() {
 		Scanner leitor = new Scanner(System.in);
 		try {
-			leitor = new Scanner( new File("C:\\coding\\college\\java\\4 periodo\\ED-Exercicio2\\Grafo.txt"));
+			leitor = new Scanner( new File("D:\\Coding\\Java\\4-periodo\\ED-Exercicio2\\Grafo.txt"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -99,7 +97,7 @@ public class Teste {
 		String[] a = leitor.nextLine().split(" ");
 		int n = Integer.parseInt(a[0]);
 		int m = Integer.parseInt(a[1]);
-		int[][] A = new int[n][m];
+		int[][] M = new int[n][m];
 		int l = 0;
 		
 		while (leitor.hasNextLine()) {
@@ -107,24 +105,22 @@ public class Teste {
 			int v1 = Integer.parseInt(aresta[0])-1;
 			int v2 = Integer.parseInt(aresta[1])-1;
 			
-			A[v1][l] = 1;
-			A[v2][l] = 1;
+			M[v1][l] = 1;
+			M[v2][l] = 1;
 			l++;
 		}
-		for (int i = 0; i < A.length; i++) {
-			for (int j = 0; j < A[0].length; j++) {
-				System.out.print(A[i][j] + " ");
+		for (int i = 0; i < M.length; i++) {
+			for (int j = 0; j < M[0].length; j++) {
+				System.out.print(M[i][j] + " ");
 			}
 			System.out.println("");
 		}
-
 		try {
 			leitor.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
-		return A;
+		return M;
 	}
 
 	public static void possuiLaco(int[][] A) {
